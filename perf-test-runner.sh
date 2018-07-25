@@ -14,27 +14,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#set -o xtrace
-#
-## prerequisite: Before run this script pip and virtualenv packages have to be installed on the running environment
-## virtuel env location
-#INIT_ENV=env
-#
-## Set python interpreter you want for your environment
-#PYTHON=$(which python3)
-#
-## get the working directory
-#WD=$2
-#cd ${WD}
-#
-## create the virtual env
-#virtualenv $WD/$INIT_ENV -p $PYTHON
-#
-## activate the environment
-#source $WD/env/bin/activate
-#
-## install packages to the virtual environment
-#env/bin/pip install -r requirements.txt
+set -o xtrace
+
+# prerequisite: Before run this script pip and virtualenv packages have to be installed on the running environment
+# virtuel env location
+INIT_ENV=env
+
+# Set python interpreter you want for your environment
+PYTHON=$(which python3)
+
+# get the working directory
+WD=$2
+cd ${WD}
+
+# create the virtual env
+virtualenv $WD/$INIT_ENV -p $PYTHON
+
+# activate the environment
+source $WD/env/bin/activate
+
+# install packages to the virtual environment
+env/bin/pip install -r requirements.txt
 
 # run the run-perf-test.py script
 python run-perf-test.py
